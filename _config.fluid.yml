@@ -149,7 +149,7 @@ color:
   # Color of navigation bar background
   navbar_bg_color: "#2f4154"
   navbar_bg_color_dark: "#1f3144"
-
+  
   # 顶部菜单字体色
   # Color of navigation bar text
   navbar_text_color: "#fff"
@@ -917,7 +917,7 @@ discuss:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /img/default.png
+  banner_img: https://i.ibb.co/pL9X3cJ/9eaa0d02ec0d778fa09c65adedbfa0eb.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -928,7 +928,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: /img/default.png
+  banner_img: https://i.ibb.co/rfQGz6h/a3948c28204e7167defcadcfeebfd5f4.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -957,8 +957,8 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: /img/default.png
-  banner_img_height: 80
+  banner_img: https://i.ibb.co/mtWX10p/7e2eccc4d1cdac9df0e80293d693cc1e.jpg
+  banner_img_height: 60
   banner_mask_alpha: 0.3
   tagcloud:
     min_font: 15
@@ -974,18 +974,17 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: /img/default.png
+  banner_img: https://i.ibb.co/m6wY4GR/60f6fa993f4c9f6015518e9e9ace6ac4.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
-  avatar: https://i.ibb.co/S5Z6Pk7/rilakkuma-web-2.jpg
-  name: "Fluid"
-  intro: "我是一位準備轉職前端的新人"
+  avatar: https://i.ibb.co/8DNM6ry/535bb26eb7abd6bc487e66da5bbbf199.png
+  name: "雄"
+  intro: "準備轉職前端的新手"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, the icon is no longer a link, but a hovering QR code
   icons:
     - { class: "iconfont icon-github-fill", link: "https://github.com", tip: "GitHub" }
-    - { class: "iconfont icon-douban-fill", link: "https://douban.com", tip: "豆瓣" }
-    - { class: "iconfont icon-wechat-fill", qrcode: "/img/favicon.png" }
+    - { class: "iconfont icon-mail", link: "mailto: wooiseongseong96@gmail.com", tip: "E-mail" }
 
 
 #---------------------------
