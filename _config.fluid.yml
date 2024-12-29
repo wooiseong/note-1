@@ -18,11 +18,11 @@
 
 # 用于浏览器标签的图标
 # Icon for browser tab
-favicon: /img/fluid.png
+favicon: https://i.ibb.co/zVg9D8g/xiong-web-Logo.png
 
 # 用于苹果设备的图标
 # Icon for Apple touch
-apple_touch_icon: /img/fluid.png
+apple_touch_icon: https://i.ibb.co/zVg9D8g/xiong-web-Logo.png
 
 # 浏览器标签页中的标题分隔符，效果：文章名 - 站点名
 # Title separator in browser tab, eg: article - site
@@ -48,7 +48,7 @@ code:
   # 代码高亮
   # Code highlight
   highlight:
-    enable: true
+    enable: false
 
     # 代码块是否显示行号
     # If true, the code block display line numbers
@@ -57,7 +57,7 @@ code:
     # 实现高亮的库，对应下面的设置
     # Highlight library
     # Options: highlightjs | prismjs
-    lib: "highlightjs"
+    lib: "prismjs"
 
     highlightjs:
       # 在链接中挑选 style 填入
@@ -153,22 +153,22 @@ color:
   # 顶部菜单字体色
   # Color of navigation bar text
   navbar_text_color: "#fff"
-  navbar_text_color_dark: "#d0d0d0"
+  navbar_text_color_dark: "#e0e0e0"
 
   # 副标题字体色
   # Color of subtitle text
   subtitle_color: "#fff"
-  subtitle_color_dark: "#d0d0d0"
+  subtitle_color_dark: "#e0e0e0"
 
   # 全局字体色
   # Color of global text
   text_color: "#3c4858"
-  text_color_dark: "#c4c6c9"
+  text_color_dark: "#e0e0e0"
 
   # 全局次级字体色（摘要、简介等位置）
   # Color of global secondary text (excerpt, introduction, etc.)
   sec_text_color: "#718096"
-  sec_text_color_dark: "#a7a9ad"
+  sec_text_color_dark: "#e0e0e0"
 
   # 主面板背景色
   # Color of main board
@@ -178,27 +178,27 @@ color:
   # 文章正文字体色
   # Color of post text
   post_text_color: "#2c3e50"
-  post_text_color_dark: "#c4c6c9"
+  post_text_color_dark: "#e0e0e0"
 
   # 文章正文字体色（h1 h2 h3...）
   # Color of Article heading (h1 h2 h3...)
   post_heading_color: "#1a202c"
-  post_heading_color_dark: "#c4c6c9"
+  post_heading_color_dark: "#e0e0e0"
 
   # 文章超链接字体色
   # Color of post link
   post_link_color: "#0366d6"
-  post_link_color_dark: "#1589e9"
+  post_link_color_dark: "#FFE153"
 
   # 超链接悬浮时字体色
   # Color of link when hovering
   link_hover_color: "#30a9de"
-  link_hover_color_dark: "#30a9de"
+  link_hover_color_dark: "#FFE153"
 
   # 超链接悬浮背景色
   # Color of link background when hovering
   link_hover_bg_color: "#f8f9fa"
-  link_hover_bg_color_dark: "#364151"
+  link_hover_bg_color_dark: "#3c4854"
 
   # 分隔线和表格边线的颜色
   # Color of horizontal rule and table border
@@ -348,7 +348,7 @@ iconfont: //at.alicdn.com/t/c/font_1736178_k526ubmyhba.css
 navbar:
   # 导航栏左侧的标题，为空则按 hexo config 中 `title` 显示
   # The title on the left side of the navigation bar. If empty, it is based on `title` in hexo config
-  blog_title: "Fluid"
+  blog_title: "雄的部落格"
 
   # 导航栏毛玻璃特效，实验性功能，可能会造成页面滚动掉帧和抖动，部分浏览器不支持会自动不生效
   # Navigation bar frosted glass special animation. It is an experimental feature
@@ -482,8 +482,7 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: /img/default.png
-
+  banner_img: https://i.ibb.co/CKTLfBP/b47a5e52051a3914f7a46e5897d2076a.jpg
   # 头图高度，屏幕百分比
   # Height ratio of banner image
   # Available: 0 - 100
@@ -501,7 +500,7 @@ index:
 
     # 为空则按 hexo config.subtitle 显示
     # If empty, text based on `subtitle` in hexo config
-    text: "An elegant Material-Design theme for Hexo"
+    text: "您即將抵達下一顆星球，請繫好安全帶"
 
     # 通过 API 接口作为首页副标题的内容，必须返回的是 JSON 格式，如果请求失败则按 text 字段显示，该功能必须先开启 typing 打字机功能
     # Subtitle of the homepage through the API, must be returned a JSON. If the request fails, it will be displayed in `text` value. This feature must first enable the typing animation
