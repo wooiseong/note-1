@@ -11,3 +11,5 @@ Apa khabar! 我是一名準備轉職前端工程師的新手 <i class="fa-solid 
 有問題歡迎通過電郵 wooiseongseong96@gmail.com 或者底下留言給我。
 
 目前在尋找南部的junior前端工程師的崗位，歡迎聯繫我，謝謝。
+
+ok
