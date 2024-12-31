@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
+title: 雄的部落格
+subtitle: '記錄前端技術的部落格'
+description: '希望把所學記錄起來，幫助需要的人'
+keywords: 前端
+author: 雄
 language: zh-TW
 timezone: ''
 
