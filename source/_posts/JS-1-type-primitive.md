@@ -1,5 +1,5 @@
 ---
-title: Javascript-1-數據類型(一)
+title: Javascript-1-數據類型(一) 簡單數據
 excerpt: Javascript的數據類型可以分爲基本數據和引用數據兩類
 tags: [Javascript, 數據類型]
 categories: [Javascript]
@@ -9,7 +9,7 @@ date: 2024-12-30 16:28:13
 # 1. Javascript數據類型 (一)
 Javascript數據類型可以分爲簡單和複雜類型，本文會先討論簡單數據類型。
 
-## 1.1. 簡單數據
+## 1.1. 簡單數據 (primitive type)
 又稱基本數據類型，包括 數字型(number),字符串型(string), 布爾型(boolean), 未定義型(undefined), 空類型(null)
 <br>
 
@@ -23,7 +23,7 @@ let num  // Javascript
 int num = 10  // Java, num的值必須是數字
 ```
 
-計算過程中可能會出現`NaN`，即Not a Number，代表一個計算錯誤：
+計算過程中可能會出現 `NaN` ，即Not a Number，代表一個計算錯誤：
 - 不正確的數學操作
 - 未定義的數學操作
 
@@ -46,12 +46,14 @@ console.log('A是\'Apples\'的縮寫') // A是'Apples'的縮寫
 ```
 
 字符串可以用加號`+`連接：
+
 ```javascript
 console.log('A是' + 'Apple')  // A是Apple
 ```
 
 #### 1.1.2.1 模板字符串
 在字符串中，可以用反引號``括起來，用`${}`插入變量：
+
 ```javascript
 let a = 'Apple'
 console.log('A是' + `${a}`)  // A是Apple
@@ -105,7 +107,7 @@ Javascript是弱數據類型，所以獲取的數據需要仔細判斷數據類�
 #### 1.1.7.1. 隱式轉換
 運算符執行時，系統内部會自動轉換數據類型，所以稱爲"隱"式轉換。
 
-- 規則1：`+`只要一邊是字符串，另一個也會變成字符串，其他運算符則會轉成數字類型。
+- 規則1： `+` 只要一邊是字符串，另一個也會變成字符串，其他運算符則會轉成數字類型。
 
 ```javascript
 console.log(2 + 2) // 4
@@ -116,7 +118,7 @@ console.log(+'2') // 2 (number)
 ```
 
 {% note info %}
-輸入框的内容是<font color="	#46A3FF">**字符串**</font>。在輸入框`input`接收的變量可以放`+`，把字符串轉換成數字。
+輸入框的内容是<font color="	#46A3FF">**字符串**</font>。在輸入框 `input` 接收的變量可以放 `+` ，把字符串轉換成數字。
 {% endnote %}
 
 #### 1.1.7.2. 顯式轉換
@@ -130,7 +132,7 @@ let a = 'A'
 console.log(Number(a))  // NaN
 ```
 
-小數也可以轉換成整數,`parseInt`會自動忽略非數字：
+小數也可以轉換成整數, `parseInt` 會自動忽略非數字：
 ```javascript
 let a = '123.12px'
 console.log(parseInt(a))  // 123
