@@ -1,5 +1,5 @@
 ---
-title: Javascript-1-type
+title: Javascript-1-數據類型(一)
 excerpt: Javascript的數據類型可以分爲基本數據和引用數據兩類
 tags: [Javascript, 數據類型]
 categories: [Javascript]
