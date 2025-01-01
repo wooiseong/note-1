@@ -6,8 +6,7 @@ categories: [Javascript]
 date: 2024-12-31 11:00:00
 ---
 
-# 1. Javascript數據類型 (二)
-上一篇討論了Javascript簡單數據類型，想瞭解的朋友可以點擊[這裡](https://wooiseong.vercel.app/2024/12/30/JS-1-type-primitive/)查看。
+上一篇討論了Javascript簡單數據類型，想瞭解的朋友可以點擊[Javascript-1-數據類型(一) 簡單數據](https://wooiseong.vercel.app/2024/12/30/JS-1-type-primitive/)。
 
 ## 1.2. 複雜數據 (complex type)
 複雜數據類型，又被稱為引用數據類型，包括數組，和對象。和簡單數據不同，在于值保存的方法不同。在下一篇會再詳細比較兩者的不同。
@@ -140,7 +139,7 @@ console.log(obj['name']) // 18
 一般是第一種方法1居多，但屬性名有 `-` ，比如 `fake-name` ，就必須用 `obj[屬性名]` 這種寫法。
 {% endnote %}
 
-#### 1.2.1.1. 對象操作 -> 改
+#### 1.2.1.2. 對象操作 -> 改
 直接把新值傳達給指定對象的屬性，比如`age`即可
 
 ```javascript
@@ -157,7 +156,7 @@ console.log(obj.age) // 20
 ```
 
 
-#### 1.2.1.1. 對象操作 -> 增
+#### 1.2.1.3. 對象操作 -> 增
 直接把值傳達給對象的新屬性，比如 `gender` 即可
 
 ```javascript
@@ -173,7 +172,7 @@ obj.gender = 'male'
 console.log(obj.gender) // male
 ```
 
-#### 1.2.1.1. 對象操作 -> 刪
+#### 1.2.1.4. 對象操作 -> 刪
 非嚴格模式下可以使用 `delete` 刪除屬性和保存的值，但嚴格模式下不行。
 
 ```javascript
@@ -188,6 +187,52 @@ let obj = {
 delete obj.age
 console.log(obj) // { name: 'Ada', sayHi: ƒ }
 ```
-<br>
+
+#### 1.2.1.5. 遍歷對象
+遍歷對象中的每個元素，可以使用 `for(let k in obj)` 的方式， `k` 是元素名， `obj[k]` 是屬性名存的值
+
+```javascript
+let obj = {
+  name: 'Ada',
+  age: 18,
+  sayHi: function() {
+    console.log('Hi')
+  }
+}
+
+for (let k in obj) {
+  console.log(k, obj[k])
+}
+// name Ada
+// age 18
+//  sayHi ƒ () { console.log('Hi') }
+```
+
+#### 1.2.1.6. 内置對象
+Javascript内部也有提供對象，包含屬性和方法使用：
+
+```javascript
+// 屬性
+console.log(Math.PI) //3.141592653589793
+
+
+// 方法
+console.log(Math.ceil(1.54)) // 2 (向上取整)
+console.log(Math.floor(1.54)) // 1 (向下取整)
+
+// 複數的正數1.5是四捨五入（2），負數是入比較‘大’的數（-1>-2），也就是-1
+console.log(Math.round(1.54)) // 2 (四捨五入)
+console.log(Math.round(1.55)) // 2 (四捨五入)
+console.log(Math.round(-1.54)) // -1 (負值，取比較大的數)
+console.log(Math.round(-1.55)) // -2
+
+console.log(Math.max(1，2，3，4，5)) // 5 (最大值)
+console.log(Math.min(1，2，3，4，5)) // 1 (最小值)
+
+```
+
+
 <br>
 還有一個複雜數據是函數 (function)，會在下一篇繼續討論，敬請期待。
+<br>
+<br>

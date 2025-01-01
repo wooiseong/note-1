@@ -6,7 +6,6 @@ categories: [Javascript]
 date: 2024-12-30 16:28:13
 ---
 
-# 1. Javascript數據類型 (一)
 Javascript數據類型可以分爲簡單和複雜類型，本文會先討論簡單數據類型。
 
 ## 1.1. 簡單數據 (primitive type)
@@ -124,6 +123,7 @@ console.log(+'2') // 2 (number)
 #### 1.1.7.2. 顯式轉換
 直接把數據類型轉換成其他數據類型，所以稱爲"顯"式轉換。
 
+- 轉換成數字
 ```javascript
 let a = '123'
 console.log(Number(a))  // 123
@@ -138,3 +138,14 @@ let a = '123.12px'
 console.log(parseInt(a))  // 123
 console.log(parseFloat(a))  // 123.12
 ```
+
+- 轉換成布爾值
+```javascript
+console.log(Boolean(1))  // true
+console.log(Boolean(0))  // false
+console.log(Boolean(''))  // false
+console.log(Boolean(null))  // false
+console.log(Boolean(undefined))  // false
+console.log(Boolean(NaN))  // false
+```
+
