@@ -1,5 +1,5 @@
 ---
-title: Javascript-4-那個函數展開的領域 ———— 作用域
+title: Javascript-4-那個函數展開的領域 —— 作用域
 excerpt: 學習函數，就必須要知道函數變量訪問的原則，才不會造成變量污染或者訪問不到變量的囧況。
 tags: [Javascript, 函數, 作用域] 
 categories: [Javascript]
@@ -117,7 +117,7 @@ console.log(x) // x is not defined
 ```
 ![](/img/JS/JS-4-5.png) 
 
-## 1.3 變量訪問原則
+# 1.3 變量訪問原則
 瞭解了作用域的作用範圍，代碼查找變量時遵循以下原則：
 
 - 只要有代碼一定有作用域
