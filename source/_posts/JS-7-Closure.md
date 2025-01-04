@@ -8,7 +8,7 @@ date: 2025-01-04 20:09:41
 
 關於作用域的介紹可以看回這篇: [Javascript-4-那個函數展開的領域 —— 作用域](https://wooiseong.vercel.app/2025/01/02/JS-4-scope/)。
 
-關於函數的垃圾回收機制可以看回這篇：[Javascript-6-變量傳説（一）垃圾回收機制](https://wooiseong.vercel.app/2025/01/04/JS-6-GarbageCollection/)。
+關於函數的垃圾回收機制可以看回這篇：[Javascript-6-變量傳説（一）垃圾回收機制](https://wooiseong.vercel.app/2025/01/04/JS-6-garbageCollection/)。
 
 ## 1.1. 什麽是閉包 (Closure)
 從上面兩篇，我們可以知道作用域存在于函數中，裏面的變量在函數執行完就銷毀。
