@@ -14,7 +14,7 @@ date: 2025-01-04 16:16:48
 爲什麽for loop使用的變量是 `let` ，而不用 `var` 或則 `const` ？
 
 ```javascript
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 3; i++) {
   console.log('wawawa')
 }
 ```
