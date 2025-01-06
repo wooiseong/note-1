@@ -1,5 +1,5 @@
 ---
-title: Javascript-12-操作DOM元素
+title: Javascript-12-操作DOM元素（一）
 excerpt: 本篇會討論操作DOM元素内容和屬性的方法。
 tags: [Javascript, API, DOM] 
 categories: [Javascript]
