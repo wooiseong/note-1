@@ -106,7 +106,7 @@ className前面需要加 `.`，不然無法獲取DOM。
 這個僞數組類似數組，裏面會有所有符合條件的DOM元素集合（條件是都有 `testing` 這個className），但是它並不是真正的數組。
 <br>
 {% note info %}
-僞數組和數組共同點： 都有 `length` 屬性
+僞數組和數組共同點： 都有 `length` 和 `index`。
 
 僞數組和數組不同點： 僞數組沒有數組的方法，比如 `push`、`pop`、`shift`、`unshift`、`map`、`filter`、`reduce` 等等。
 {% endnote %}
