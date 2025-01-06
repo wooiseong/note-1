@@ -1,17 +1,17 @@
 ---
-title: Javascript-11-獲取DOM
+title: Javascript-11-獲取DOM元素
 excerpt: 本篇會討論獲取DOM的方法和注意事項。
 tags: [Javascript, API, DOM] 
 categories: [Javascript]
 date: 2025-01-05 20:33:02
 ---
 
-上一篇提到了DOM的基本結構，接下來會討論如何獲取DOM。
+上一篇提到了DOM元素的基本結構，接下來會討論如何獲取DOM元素。
 
 ## 1.1. 獲取單個DOM元素
 獲取單個DOM元素有很多方法，這裏討論比較常用的幾個方法。
 
-### 1.1.1. className獲取DOM
+### 1.1.1. className獲取DOM元素
 ```html
 <body>
   <div class="testing">123</div>
@@ -25,7 +25,7 @@ DOM對象 `document` 有一個方法叫 `querySelector`，可以把className（�
 
 一般我們會把獲得的DOM元素賦值給一個變量，比如上面的 `div` ，我們再操作那個變量。這樣寫會比較簡潔。
 
-### 1.1.2. HTML標簽獲取DOM
+### 1.1.2. HTML標簽獲取DOM元素
 ```html
 <body>
   <div class="testing">123</div>
@@ -51,18 +51,18 @@ DOM對象 `document` 有一個方法叫 `querySelector`，可以把className（�
 
 `querySelector` 方法，只可以獲取第一個符合條件的DOM （條件是有 `testing` 這個className），
 
-如果有多個符合條件的DOM，只會獲取第一個。
+如果有多個符合條件的DOM元素，只會獲取第一個。
 
 所以不能獲取 `<div class="testing2">456<div>`。
 
 只要獲取第二個 `div` 標簽，其實是可以辦到的，後面會學到。
 
-className比起標簽獲取DOM，特異性更高。
+className比起標簽獲取DOM元素，特異性更高。
 
-我們可以給那個HTML標簽唯一的className，所以一般用className獲取DOM。
+我們可以給那個HTML標簽唯一的className，所以一般用className獲取DOM元素。
 
-### 1.1.3. id標簽獲取DOM
-除了上面兩種方法，還有一種是id獲取DOM：
+### 1.1.3. id標簽獲取DOM元素
+除了上面兩種方法，還有一種是id獲取DOM元素：
 ```html
 <body>
   <div id="testing">123</div>
@@ -73,11 +73,11 @@ className比起標簽獲取DOM，特異性更高。
 ```
 這個方法是可以把id標簽 `testing` 當成`document.querySelector`的參數，便可以獲取DOM元素。
 
-這種id獲取DOM的方法一般比較少用。
+這種id獲取DOM元素的方法一般比較少用。
 <br>
 
 {% note danger %}
-className前面需要加 `.`，不然無法獲取DOM。
+className前面需要加 `.`，不然無法獲取DOM元素。
 
 用HTML標簽，標簽名前面則不用加 `.`。
 
