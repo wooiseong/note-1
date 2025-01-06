@@ -243,6 +243,7 @@ Javascript可以把 `className` 加給html屬性，讓它獲得樣式。
 的確是可以很方便把某組樣式直接加給DOM元素。
 
 但問題在於，新的 `className` 容易覆蓋以前的。最好的辦法是以 `classList` 的方式追加和刪除 `className` 。
+<br>
 
 什麽是 `classList` ?
 
