@@ -331,4 +331,3 @@ Javascript可以把 `className` 加給html屬性，讓它獲得樣式。
 
 
 還有`toggle`的部分，會留到下一篇再討論，敬請期待。
-
