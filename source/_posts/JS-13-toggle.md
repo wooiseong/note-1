@@ -1,5 +1,5 @@
 ---
-title: Javascript-12-操作DOM元素（二）
+title: Javascript-13-操作DOM元素（二）
 excerpt: 本篇會延續上一篇，繼續討論操作DOM元素的方法。
 tags: [Javascript, API, DOM] 
 categories: [Javascript]
