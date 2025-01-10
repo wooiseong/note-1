@@ -1,7 +1,7 @@
 ---
 title: Javascript-15-監聽風雲（一）什麽是事件監聽
 excerpt: 本篇開始討論發生在網頁上的事件以及JS是如何監聽的。
-tags: [Javascript, API, DOM] 
+tags: [Javascript, API, DOM, EventListener] 
 categories: [Javascript]
 date: 2025-01-09 21:12:39
 ---
@@ -80,7 +80,7 @@ DOM對象.addEventListener(事件類型, 執行函數);
 ## 1.3. 事件類型
 根據事件類型，可以分爲4類：
 
-### 1.3.1 鼠標事件
+### 1.3.1. 鼠標事件
 - click 點擊
 - mouseenter 鼠標經過
 - mouseleave 鼠標離開
@@ -116,7 +116,7 @@ DOM對象.addEventListener(事件類型, 執行函數);
 
 <br>
 
-### 1.3.2 焦點事件
+### 1.3.2. 焦點事件
 - focus 獲得焦點
 - blur 失去焦點
 
@@ -154,7 +154,7 @@ DOM對象.addEventListener(事件類型, 執行函數);
 獲得焦點讓文本框有一些樣式，告知用戶正在輸入。
 <br>
 
-### 1.3.3 鍵盤事件
+### 1.3.3. 鍵盤事件
 - keydown 鍵盤按下
 - keyup 鍵盤擡起
 
@@ -171,12 +171,12 @@ DOM對象.addEventListener(事件類型, 執行函數);
   <script>
     const texting = document.querySelector('.texting')
 
-    //獲得焦點
+    //按下按鍵
     texting.addEventListener('keyup', function(){
       console.log('我按鍵了')
     })
 
-    //失去焦點
+    //鍵盤擡起
     texting.addEventListener('keydown', function(){
       console.log('我放開鍵了')
     })
@@ -191,7 +191,7 @@ DOM對象.addEventListener(事件類型, 執行函數);
 在放開時，會觸發 `keyup` 事件。
 <br>
 
-### 1.3.4 文本事件
+### 1.3.4. 文本事件
 - input 用戶輸入
 
 主要是監聽用戶輸入内容事件。

@@ -6,14 +6,19 @@
   <title>Document</title>
 </head>
 <body>
-  <input type="text" class="texting" placeholder="請輸入">
+  <div>
+    <p>我是p</p>
+
+    <span>我是span</span>
+    <br>
+    <br>
+    <a href="#">我是a</a>
+  </div>
 
   <script>
-    const input = document.querySelector('input')
-
-    //獲取用戶輸入内容
-    input.addEventListener('input', function(){
-      console.log(input.value.length)
+    const div = document.querySelector('div')
+    div.addEventListener('click', function(e){
+      console.log(e.target.tagName)
     })
   </script>
 </body>
