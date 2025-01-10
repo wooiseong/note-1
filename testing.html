@@ -6,16 +6,15 @@
   <title>Document</title>
 </head>
 <body>
-  <ul class="dad">
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-  </ul>
+  <input type="text" class="texting" placeholder="請輸入">
 
   <script>
-    const ul = document.querySelector('ul')
-    // 刪除節點
-    ul.removeChild(ul.children[0])
+    const input = document.querySelector('input')
+
+    //獲取用戶輸入内容
+    input.addEventListener('input', function(){
+      console.log(input.value.length)
+    })
   </script>
 </body>
 </html>
