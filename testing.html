@@ -4,21 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .grandfa{
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+    }
+    .fa{
+      width: 100px;
+      height: 100px;
+      background-color: green;
+    }
+    .son{
+      width: 50px;
+      height: 50px;
+      background-color: yellow;
+    }
+  </style>
 </head>
 <body>
-  <div>
-    <p>我是p</p>
-
-    <span>我是span</span>
-    <br>
-    <br>
-    <a href="#">我是a</a>
+  <div class="grandfa">
+    <div class="fa">
+      <div class="son"></div>
+    </div>
   </div>
 
   <script>
-    const div = document.querySelector('div')
-    div.addEventListener('click', function(e){
-      console.log(e.target.tagName)
+    // 爺爺事件-藍
+    const grandfa = document.querySelector('.grandfa')
+    grandfa.addEventListener('click', function(){
+      console.log('爷爺事件')
+    })
+
+    // 爸爸事件-綠
+    const fa = document.querySelector('.fa')
+    fa.addEventListener('click', function(){
+      console.log('爸爸事件')
+    })
+
+    //孩子事件-黃
+    const son = document.querySelector('.son')
+    son.addEventListener('click', function(){
+      console.log('孩子事件')
     })
   </script>
 </body>
