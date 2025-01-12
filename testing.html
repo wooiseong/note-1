@@ -5,38 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    .fa {
-      width: 200px;
-      height: 200px;
-      background-color: green;
-      margin-left: 100px;
+    body{
+      height: 2000px
     }
-    .son {
-      width: 100px;
-      height: 100px;
-      background-color: yellow;
+    .texting {
+      font-size: 50px;
+      background-color: pink;
+      margin-top: 300px;
     }
   </style>
 </head>
 <body>
-  <div class="fa">
-    我是爸爸
-    <div class="son">我是兒子</div>
-  </div>
+  <div class="texting">经过我就會變紅</div>
 
   <script>
-    // 父元素綁定事件
-    const fa = document.querySelector('.fa')
-    fa.addEventListener('mouseover', function(){
-      console.log('父元素進入')
+    const texting = document.querySelector('.texting')
+    window.addEventListener('scroll', function(){
+      if (document.documentElement.scrollTop > texting.offsetTop){
+        // 執行 texting字體變red
+        texting.style.color = 'red'
+      }
     })
-
-    // 子元素綁定事件
-    const son = document.querySelector('.son')
-    fa.addEventListener('mouseout', function(){
-      console.log('父元素離開')
-    })
-
   </script>
 </body>
 </html>
