@@ -1,6 +1,6 @@
 ---
-title: Javascript-16-監聽風雲（三）事件流，事件捕獲和事件冒泡
-excerpt: 本篇討論事件對象的基本概念，包括其屬性，以及應用的場景。
+title: Javascript-17-監聽風雲（三）事件流，事件捕獲和事件冒泡
+excerpt: 本篇討論事件流，也就是事件觸發到執行所綁定的函數的過程
 tags: [Javascript, API, DOM, EventListener] 
 categories: [Javascript]
 date: 2025-01-10 16:15:15
@@ -11,7 +11,7 @@ date: 2025-01-10 16:15:15
 
 接下來會更詳細瞭解事件發生的機制。
 
-## 1.2. 事件流 (捕獲事件與冒泡事件)
+## 1.2. 事件流 (事件捕獲與事件冒泡)
 事件流指的是事件完整執行過程的流動路徑。
 
 ![](/img/JS/JS-17-1.png) 
@@ -101,9 +101,9 @@ HTML結構中，
 
 當我們點擊黃色箱子時，發現打印順序是 孩子 -> 爸爸 -> 爺爺。
 
-顯然是觸發冒泡事件。
+顯然是觸發事件冒泡。
 
-如果我們要看到捕獲事件呢？
+如果我們要看到事件捕獲呢？
 <br>
 
 我們的事件監聽，實際上還有第三個參數：
@@ -111,9 +111,9 @@ HTML結構中，
 DOM對象.addEventListener(事件類型, 執行函數， 是否捕獲事件);
 ```
 
-一般默認是`false`，所以我們一般看不到這個捕獲事件的。
+一般默認是`false`，所以我們一般看不到這個事件捕獲的。
 
-當我們在最後一個參數寫 `true` ，就可以看到捕獲事件了。
+當我們在最後一個參數寫 `true` ，就可以看到事件捕獲了。
 <br>
 
 ```javascript
@@ -155,7 +155,7 @@ DOM對象.addEventListener(事件類型, 執行函數， 是否捕獲事件);
 <br>
 
 ## 1.3. 阻止冒泡
-雖然冒泡事件對於用一個子標簽的DOM元素綁定事件，
+雖然事件冒泡對於用一個子標簽的DOM元素綁定事件，
 
 觸發時也順便觸發父標簽的同名事件，但很常造成不可預計困擾。
 
@@ -189,4 +189,128 @@ DOM對象.addEventListener(事件類型, 執行函數， 是否捕獲事件);
 ```
 ![](/img/JS/JS-17-4.png) 
 
-這個 `e.Propagation()` 方法，也可以阻止捕獲事件。
+這個 `e.Propagation()` 方法，也可以阻止事件捕獲。
+
+## 1.4. 鼠標事件與事件冒泡
+我們在之前提到的鼠標事件，都是 `mouseenter` 和 `mouseleave` 組合。
+
+這兩個事件，實際上是沒有冒泡的。
+
+我們不妨試試看：
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" 
+  content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .fa {
+      width: 200px;
+      height: 200px;
+      background-color: green;
+      margin-left: 100px;
+    }
+    .son {
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="fa">
+    我是爸爸
+    <div class="son">我是兒子</div>
+  </div>
+
+  <script>
+    // 父元素綁定事件
+    const fa = document.querySelector('.fa')
+    fa.addEventListener('mouseenter', function(){
+      console.log('父元素進入')
+    })
+
+    // 子元素綁定事件
+    const son = document.querySelector('.son')
+    fa.addEventListener('mouseleave', function(){
+      console.log('父元素離開')
+    })
+
+  </script>
+</body>
+</html>
+```
+
+![](/img/JS/JS-17-5.png) 
+
+可以看到我們的鼠標從外邊移進黃色箱子 (子元素) ,再離開箱子所有範圍，
+
+並沒有事件冒泡的發生。
+<br>
+
+我們其實有觸發事件冒泡的鼠標事件， `mouseover` 和 `mouseout`，
+
+分別對應 `mouseover` 和 `mouseleave`。
+
+再試試看：
+```javascript
+  <script>
+    // 父元素綁定事件
+    const fa = document.querySelector('.fa')
+    fa.addEventListener('mouseover', function(){
+      console.log('父元素進入')
+    })
+
+    // 子元素綁定事件
+    const son = document.querySelector('.son')
+    fa.addEventListener('mouseout', function(){
+      console.log('父元素離開')
+    })
+
+  </script>
+```
+![](/img/JS/JS-17-6.png) 
+<font size="6">？？？🤷‍♂️ </font>
+
+發生什麽事？
+
+我們可以慢慢分析：
+
+---------
+
+- 父元素進入
+鼠標進入父級元素（綠色箱子）
+
+---------
+
+- 父元素離開
+- 父元素進入
+鼠標進入子級元素（黃色箱子），離開父元素，就會觸發鼠標離開事件，
+因爲事件冒泡，子元素有鼠標懸停事件，冒泡到父元素，觸發父元素鼠標懸停事件。
+
+---------
+
+- 父元素離開
+- 父元素進入
+鼠標離開子元素，進入父元素，因爲事件冒泡，觸發鼠標離開事件，
+接著觸發鼠標懸停事件。
+---------
+
+- 父元素離開
+鼠標離開父級元素
+---------
+<br>
+
+當我們在移動鼠標進入子元素時，
+
+我們通常希望觸發一次父元素的鼠標懸停事件，
+
+因爲事件冒泡，導致不需要頻密觸發的的事件重複觸發，造成性能浪費。
+
+<br>
+
+因此，需要監聽鼠標事件時， <font color="#46A3FF">**`mouseover` 和 `mouseleave` 比較推薦使用**</font>。
+
+<br>

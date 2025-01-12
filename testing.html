@@ -5,48 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    .grandfa{
+    .fa {
       width: 200px;
       height: 200px;
-      background-color: blue;
+      background-color: green;
+      margin-left: 100px;
     }
-    .fa{
+    .son {
       width: 100px;
       height: 100px;
-      background-color: green;
-    }
-    .son{
-      width: 50px;
-      height: 50px;
       background-color: yellow;
     }
   </style>
 </head>
 <body>
-  <div class="grandfa">
-    <div class="fa">
-      <div class="son"></div>
-    </div>
+  <div class="fa">
+    我是爸爸
+    <div class="son">我是兒子</div>
   </div>
 
   <script>
-    // 爺爺事件-藍
-    const grandfa = document.querySelector('.grandfa')
-    grandfa.addEventListener('click', function(){
-      console.log('爷爺事件')
-    })
-
-    // 爸爸事件-綠
+    // 父元素綁定事件
     const fa = document.querySelector('.fa')
-    fa.addEventListener('click', function(){
-      console.log('爸爸事件')
+    fa.addEventListener('mouseover', function(){
+      console.log('父元素進入')
     })
 
-    //孩子事件-黃
+    // 子元素綁定事件
     const son = document.querySelector('.son')
-    son.addEventListener('click', function(){
-      console.log('孩子事件')
+    fa.addEventListener('mouseout', function(){
+      console.log('父元素離開')
     })
+
   </script>
 </body>
 </html>
