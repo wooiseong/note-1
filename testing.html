@@ -5,27 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    body{
-      height: 2000px
-    }
-    .texting {
-      font-size: 50px;
+    .box{
+      width: 100px;
+      height: 100px;
+      padding: 20px;
+      margin: 100px;
+      border: 5px solid black;
       background-color: pink;
-      margin-top: 300px;
+      /* position: relative; */
+    }
+    .box_son{
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      /* position: absolute; */
+      /* top: 30px; */
+      /* left: 30px; */
     }
   </style>
 </head>
 <body>
-  <div class="texting">经过我就會變紅</div>
-
+  <div class="box">
+    <div class="box_son"></div>
+  </div>
   <script>
-    const texting = document.querySelector('.texting')
-    window.addEventListener('scroll', function(){
-      if (document.documentElement.scrollTop > texting.offsetTop){
-        // 執行 texting字體變red
-        texting.style.color = 'red'
-      }
-    })
+    const box = document.querySelector('.box')
+    const box_son = document.querySelector('.box_son')
+
+    // 大箱子offsetTop
+    console.log(box.offsetTop)
+    // 小箱子offsetTop
+    console.log(box_son.offsetTop)
   </script>
 </body>
 </html>
