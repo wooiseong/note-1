@@ -9,17 +9,19 @@
 </head>
 <body>
   <script>
-      function fn(){
-    const now = +new Date()
-    const tomorrow = +new Date('2025-1-14 00:00:00')
-    const duration = tomorrow - now
-    const h = Math.floor(duration / 1000 / 60 / 60)
-    const m = Math.floor(duration / 1000 / 60 % 60)
-    const s = Math.floor(duration / 1000 % 60)
-    console.log(`${h}時${m}分${s}秒`)
+
+  function fn(){
+    console.log('hi')
   }
 
-  // setInterval(fn, 1000)
+  let n = setTimeout(fn, 5000)
+
+  //  定時器id
+  console.log(n) // 1
+
+  // 清除定時器
+  clearInterval(n)
+
   
     
   </script>

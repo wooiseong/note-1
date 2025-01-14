@@ -1,5 +1,5 @@
 ---
-title: Javascript-21-日期與時間相關（一）日期對象
+title: Javascript-21-日期與時間相關（一）日期對象與間歇函數
 excerpt: 本篇討論日期和時間相關的操作。
 tags: [Javascript, Date, Time] 
 categories: [Javascript]
@@ -201,5 +201,3 @@ setInterval(fn, 1000)
 如果我想不要馬上執行定時器，
 
 在登入頁面5秒后才開始計時呢？
-
-方法留到下一篇再介紹，敬請期待。
