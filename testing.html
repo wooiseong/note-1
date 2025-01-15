@@ -10,13 +10,18 @@
 <body>
   <script>
 
-    console.log(111)
+  // const str = 'My name is Alice, I love Alice'
 
-    setTimeout(() => {
-      console.log(222)
-    },0)
+  // const reg1 = /Alice/
+  // console.log(str.match(reg1))
 
-    console.log(333)
+  // const reg2 = /Alice/g
+  // console.log(str.match(reg2))
+  
+    const str = 'My name is Alice, I love Alice'
+    const reg = /Alice/g
+    const strReplaced = str.replace(reg, 'Bob')
+    console.log(strReplaced) // My name is Bob, I love Bob
 
   </script>
 </body>
