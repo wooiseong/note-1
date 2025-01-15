@@ -7,19 +7,22 @@
   <style>
   </style>
 </head>
+
 <body>
  
-
   <script>
-    // const fnArrow = name => ({name: name})
-    // console.log(fnArrow('Roy')) // {name: "Roy"}
-
-    const fn = function(){
-      console.log(arguments)
+    const obj = {
+      sayHi: function(){
+        const count = () => {
+          console.log(this)
+        }
+        count()
+      }
     }
 
-    fn(1,2,3)
+    obj.sayHi() // {sayHi: ƒ}
   </script>
 </body>
+
 </html>
 

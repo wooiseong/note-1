@@ -33,7 +33,7 @@ date: 2025-01-15 15:47:01
 ```javascript
 function fn(){
   console.log(this)
-  console.log(window)
+  console.log(window === this)
 }
 fn()
 ```
@@ -45,9 +45,12 @@ fn()
 因爲 `this` 指向函數的調用者。
 
 我們提到過 `window` 是頂級對象，所以實際寫法是 `window.fn()`。
+
+所以是 `window` 調用這個函數， `this` 指向 `window` 。
 <br>
 
-如果是上面的 `input` 的例子呢？
+## 2.1. 普通函數
+上面的 `input` 使用的是普通寫法的匿名函數，我們可以打印它的 `this` 看看：
 
 ```html
 <body>
@@ -75,7 +78,7 @@ fn()
 
 因此，我們如果想要改 `input` 的樣式 ，可以不用寫 `input.style.backgroundColor = 'red'`，
 
-可以直接寫 `this.style.backgroundColor = 'red'`。
+直接寫 `this.style.backgroundColor = 'red'`。
 
 ```html
 <body>
@@ -97,4 +100,58 @@ fn()
 
 打字后：
 ![](/img/JS/JS-27-4.png) 
+<br>
+
+## 3.1. 箭頭函數
+我們把上面的 `input` 的匿名函數改寫成箭頭函數看看：
+```html
+<body>
+  <input type="text" class="texting" placeholder="請輸入">
+
+  <script>
+    const input = document.querySelector('input')
+
+    //按下按鍵
+    input.addEventListener('keydown', () => {
+      console.log(this)
+    })
+  </script>
+</body>
+```
+
+![](/img/JS/JS-27-5.png) 
+
+怎麽調用者變成 `window` 了， 不是應該是 `input` 嗎<font size="5">??? 🧐</font> 
+<br>
+
+這是因爲箭頭函數不會創建自己的 `this`， 它會沿用自己的作用域鏈上一層的 `this`。
+
+`input` 外的上一層作用域就是 `window`，所以 `this` 指向 `window`。
+<br>
+
+我們可以拿嵌套的函數來試試看：
+```javascript
+const obj = {
+  sayHi: function(){
+    const count = () => {
+      console.log(this)
+    }
+    count()
+  }
+}
+
+obj.sayHi() // {sayHi: ƒ}
+```
+
+首先，`count` 是匿名函數，所以沒有作用域。
+
+就像作用域鏈機制一樣，會往上一層找，找到 `sayHi` 這個函數。
+
+`sayHi` 是普通函數，所以有作用域，是 `obj` 調用的，`sayHi` 的 `this` 是 `{sayHi: ƒ}`。
+
+所以 `count` 的 `this` 才會是 `{sayHi: ƒ}` 。
+
+
+<!-- ## 4.1 嚴格模式下的this -->
+
 
