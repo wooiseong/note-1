@@ -11,16 +11,24 @@
 <body>
  
   <script>
-const obj = {
-    name: 'A'
-}
+    const user = [{
+      name: {
+        mother: 'A',
+        father: 'B',
+        son: 'C'
+      },
+      age: 19
+    }]
 
-function fn(){
-  console.log(this)
-}
+    //渲染函數
+    function renderData([data]){
+      console.log('data的結果是', data)
+      console.log('data.name的結果是',data.name)
+      console.log('data.name.mother的結果是',data.name.mother)
+    }
 
-const fnUse = fn.bind(obj)
-fnUse() // { name: 'A' }
+    renderData(user)
+
   </script>
 </body>
 
