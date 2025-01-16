@@ -11,16 +11,12 @@
 <body>
  
   <script>
-    const obj = {
-      sayHi: function(){
-        const count = () => {
-          console.log(this)
-        }
-        count()
-      }
-    }
+    'use strict'
+    function fn(){
+  console.log(this)
+}
 
-    obj.sayHi() // {sayHi: ƒ}
+fn() // undefined
   </script>
 </body>
 
