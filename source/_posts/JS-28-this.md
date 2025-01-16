@@ -1,5 +1,5 @@
 ---
-title: Javascript-28-this的傳説(一)
+title: Javascript-28-this的傳説(一) 什麽是this
 excerpt: 本篇討論Javascript環境對象的概念，以及this的運用。
 tags: [Javascript, this] 
 categories: [Javascript]

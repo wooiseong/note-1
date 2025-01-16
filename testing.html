@@ -11,12 +11,16 @@
 <body>
  
   <script>
-    'use strict'
-    function fn(){
+const obj = {
+    name: 'A'
+}
+
+function fn(){
   console.log(this)
 }
 
-fn() // undefined
+const fnUse = fn.bind(obj)
+fnUse() // { name: 'A' }
   </script>
 </body>
 
