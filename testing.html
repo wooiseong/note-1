@@ -11,24 +11,12 @@
 <body>
  
   <script>
-    const user = [{
-      name: {
-        mother: 'A',
-        father: 'B',
-        son: 'C'
-      },
-      age: 19
-    }]
+const arr = ['A','B','C']
 
-    //渲染函數
-    function renderData([data]){
-      console.log('data的結果是', data)
-      console.log('data.name的結果是',data.name)
-      console.log('data.name.mother的結果是',data.name.mother)
-    }
-
-    renderData(user)
-
+const newArr = arr.map(function(item, index){
+  return item + 'haha'
+})
+console.log(newArr)
   </script>
 </body>
 
