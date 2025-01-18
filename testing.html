@@ -11,12 +11,18 @@
 <body>
  
   <script>
-const arr = ['A','B','C']
+function Goods(name,price, count){
+  this.name = name
+  this.price = price
+  this.count = count
+}
 
-const newArr = arr.map(function(item, index){
-  return item + 'haha'
-})
-console.log(newArr)
+Goods.loveMe = function(){
+  console.log('love me')
+  console.log(this)
+}
+
+Goods.loveMe()
   </script>
 </body>
 
