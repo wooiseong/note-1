@@ -1,7 +1,7 @@
 ---
 title: Javascript-32- 談對象（一） 創建對象 
 excerpt: 本篇討論創建對象的各種方法。
-tags: [Javascript, forEach, map] 
+tags: [Javascript, Constructor] 
 categories: [Javascript]
 date: 2025-01-17 15:58:30
 ---
