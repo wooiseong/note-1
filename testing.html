@@ -11,11 +11,27 @@
 <body>
  
   <script>
-const str = 'I,am,A'
-const strSub = str.substring(0,2)
+// function Star(uname, age) {
+//   this.uname = uname
+//   this.age = age
+// }
 
-console.log(strSub)
+// Star.prototype.sing = function() {
+//   console.log('我會唱歌')
+// }
 
+// const ldh = new Star('劉德華', 18)
+
+// console.dir(Star.prototype)
+function Star(uname, age) {
+  this.uname = uname
+  this.age = age
+}
+
+const ldh = new Star('劉德華', 18)
+console.log(ldh.__proto__)
+console.log(ldh.__proto__.constructor)
+console.log(ldh.__proto__ === Star.prototype)
 
   </script>
 </body>

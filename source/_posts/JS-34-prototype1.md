@@ -79,8 +79,8 @@ function Star(uname, age) {
     }
 }
 
-const ldh = new Person('劉德華', 18)
-const zxy = new Person('張學友', 20)
+const ldh = new Star('劉德華', 18)
+const zxy = new Star('張學友', 20)
 ```
 
 同樣的構造函數，把公用屬性和方法集合在一起（封裝性），通過 `this` 讓對象繼承（繼承性）`uname` , `age` 和 `sing` 。
