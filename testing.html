@@ -23,16 +23,49 @@
 // const ldh = new Star('劉德華', 18)
 
 // console.dir(Star.prototype)
+// function Star(uname, age) {
+//   this.uname = uname
+//   this.age = age
+// }
+
+// const ldh = new Star('劉德華', 18)
+// console.log(ldh.__proto__)
+// console.log(ldh.__proto__.constructor)
+// console.log(ldh.__proto__ === Star.prototype)
+
+
+// function Person () { 
+//   this.eyes = 2 
+// }
+
+// // 構造函數 Woman
+// function Woman(){ }
+
+// Woman.prototype = new Person()
+// Woman.prototype.constructor = Woman
+
+// // 構造函數 Man
+// function Man(){}
+
+// Man.prototype = new Person()
+// // 修改 eyes 數量
+// Man.prototype.eyes = 1
+
+// Man.prototype.constructor = Man
+
+// console.log(Person)
+// console.log(Woman.prototype.eyes)
+
 function Star(uname, age) {
   this.uname = uname
   this.age = age
 }
 
 const ldh = new Star('劉德華', 18)
-console.log(ldh.__proto__)
-console.log(ldh.__proto__.constructor)
-console.log(ldh.__proto__ === Star.prototype)
 
+console.log(ldh instanceof Star)
+console.log(Star instanceof Object)
+console.log(Star instanceof Array)
   </script>
 </body>
 
