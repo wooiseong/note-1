@@ -11,61 +11,50 @@
 <body>
  
   <script>
-// function Star(uname, age) {
-//   this.uname = uname
-//   this.age = age
-// }
+    // const p = new Promise((resolve,reject) => {
+    //   setTimeout(() => {
+    //     resolve('ok1')
+    //   },2000)
+    // })
 
-// Star.prototype.sing = function() {
-//   console.log('我會唱歌')
-// }
+    // const p2 = p.then(result => {
+    //   return new Promise((resolve,reject) => {
+    //     setTimeout(() => {
+    //       resolve(result + 'ok2')
+    //     },2000)
+    //   })
+    // })
 
-// const ldh = new Star('劉德華', 18)
+    // p2.then(result => console.log(result))
 
-// console.dir(Star.prototype)
-// function Star(uname, age) {
-//   this.uname = uname
-//   this.age = age
-// }
+    const obj = {
+      uname: 'pink',
+      age: 18,
+      hobby: ['乒乓球', '足球'],
+      family: {
+        baby: '小pink'
+      }
+    }
 
-// const ldh = new Star('劉德華', 18)
-// console.log(ldh.__proto__)
-// console.log(ldh.__proto__.constructor)
-// console.log(ldh.__proto__ === Star.prototype)
+    console.log(obj instanceof Object)
 
+    const o = {}
 
-// function Person () { 
-//   this.eyes = 2 
-// }
+    function deepCopy(newObj, oldObj) {
+      for (let k in oldObj) {
+        if (oldObj[k] instanceof Array) {
+          newObj[k] = []
+          deepCopy(newObj[k], oldObj[k])
+        } else if (oldObj[k] instanceof Object) {
+          newObj[k] = {}
+          deepCopy(newObj[k], oldObj[k])
+        }
+        else {
+          newObj[k] = oldObj[k]
+        }
+      }
+    }
 
-// // 構造函數 Woman
-// function Woman(){ }
-
-// Woman.prototype = new Person()
-// Woman.prototype.constructor = Woman
-
-// // 構造函數 Man
-// function Man(){}
-
-// Man.prototype = new Person()
-// // 修改 eyes 數量
-// Man.prototype.eyes = 1
-
-// Man.prototype.constructor = Man
-
-// console.log(Person)
-// console.log(Woman.prototype.eyes)
-
-function Star(uname, age) {
-  this.uname = uname
-  this.age = age
-}
-
-const ldh = new Star('劉德華', 18)
-
-console.log(ldh instanceof Star)
-console.log(Star instanceof Object)
-console.log(Star instanceof Array)
   </script>
 </body>
 
