@@ -5,32 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
   </style>
 </head>
 
 <body>
-  <p>123</p>
+  <div class="box">1</div>
+  
+  <script src="lodash.min.js"></script>
   <script>
+    const box = document.querySelector('.box')
+    let i = 1
 
-function redChange (){
-  try {
-    console.log('我在代碼前面')
-    const p = document.querySelector('.p')
-    p.style.color = 'red'
-    console.log('我在代碼後面')
-  } catch (error){
-    console.log(error)
+    function moving(){
+      box.innerHTML = i++
+    }
 
-  }
-  finally {
-    console.log('finally裏面照樣執行')
-  }
-  console.log('finally外面')
- }
-
-redChange()
+    box.addEventListener('mousemove', _.throttle(moving,500))
   </script>
 </body>
-
 </html>
 
