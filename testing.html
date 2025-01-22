@@ -9,52 +9,26 @@
 </head>
 
 <body>
- 
+  <p>123</p>
   <script>
-    // const p = new Promise((resolve,reject) => {
-    //   setTimeout(() => {
-    //     resolve('ok1')
-    //   },2000)
-    // })
 
-    // const p2 = p.then(result => {
-    //   return new Promise((resolve,reject) => {
-    //     setTimeout(() => {
-    //       resolve(result + 'ok2')
-    //     },2000)
-    //   })
-    // })
+function redChange (){
+  try {
+    console.log('我在代碼前面')
+    const p = document.querySelector('.p')
+    p.style.color = 'red'
+    console.log('我在代碼後面')
+  } catch (error){
+    console.log(error)
 
-    // p2.then(result => console.log(result))
+  }
+  finally {
+    console.log('finally裏面照樣執行')
+  }
+  console.log('finally外面')
+ }
 
-    const obj = {
-      uname: 'pink',
-      age: 18,
-      hobby: ['乒乓球', '足球'],
-      family: {
-        baby: '小pink'
-      }
-    }
-
-    console.log(obj instanceof Object)
-
-    const o = {}
-
-    function deepCopy(newObj, oldObj) {
-      for (let k in oldObj) {
-        if (oldObj[k] instanceof Array) {
-          newObj[k] = []
-          deepCopy(newObj[k], oldObj[k])
-        } else if (oldObj[k] instanceof Object) {
-          newObj[k] = {}
-          deepCopy(newObj[k], oldObj[k])
-        }
-        else {
-          newObj[k] = oldObj[k]
-        }
-      }
-    }
-
+redChange()
   </script>
 </body>
 
