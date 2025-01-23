@@ -1,6 +1,6 @@
 ---
-title: AJAX-1- AJAX簡介
-excerpt: 本篇討論AJAX的概念和技術。
+title: AJAX-1- AJAX簡介 (一)
+excerpt: 本篇討論AJAX的概念和技術(URL和參數)。
 tags: [Javascript, AJAX] 
 categories: [Javascript]
 date: 2025-01-23 09:14:01
@@ -134,9 +134,3 @@ axios({
 
 AJAX除了這些，還有一些需要學習的基礎知識，下篇會繼續細談，敬請期待。
 <br>
-
-<!-- ### 3.3. 請求方法
-
-### 3.4. Axios 錯誤處理
-
-### 3.5. HTTP協議 -->
