@@ -7,35 +7,52 @@
 </head>
 
 <body>  
-  <form action="javascript:;">
-    <input class="name" type="text" placeholder="請輸入名字">
-    <input class="password" type="password" placeholder="請輸入密碼">
+  <form action="javascript:;" class="formSubmit">
+    <input class="name" type="text" name="username" placeholder="請輸入名字">
+    <input class="password" type="password" name="password" placeholder="請輸入密碼">
     <button class="btn">提交</button>
   </form>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js"></script>
+  <script src="index.js"></script>
   <script>
-    const name = document.querySelector('.name')
-    const psword = document.querySelector('.password')
+
     const btn = document.querySelector('.btn')
 
     btn.addEventListener('click', () => {
-      const username = name.value
-      const password = psword.value
-      axios({
-        url: 'http://hmajax.itheima.net/api/register',
-        method: 'POST',
-        data: {
-          username,
-          password
-        }
-      }).then((result) => {
-        // console.log(result)
-      }).catch((error) => {
-        console.log(error)
-        console.log(error.response.data.message)
-      })
+      const form = document.querySelector('.formSubmit')
+      const dataCollected = serialize(form, { hash: false, empty: false })
+      console.log(dataCollected)
+
+      // axios({
+      //   url: 'http://hmajax.itheima.net/api/register',
+      //   method: 'POST',
+      //   data: dataCollected
+      // }).then((result) => {
+      //   console.log(result)
+      // }).catch((error) => {
+      //   console.log(error)
+      //   console.log(error.response.data.message)
+      // })
     })
+
+    // btn.addEventListener('click', () => {
+    //   const username = name.value
+    //   const password = psword.value
+    //   axios({
+    //     url: 'http://hmajax.itheima.net/api/register',
+    //     method: 'POST',
+    //     data: {
+    //       username,
+    //       password
+    //     }
+    //   }).then((result) => {
+    //     // console.log(result)
+    //   }).catch((error) => {
+    //     console.log(error)
+    //     console.log(error.response.data.message)
+    //   })
+    // })
 
   </script>
 </body>
