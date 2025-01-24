@@ -21,19 +21,25 @@
 
     btn.addEventListener('click', () => {
       const form = document.querySelector('.formSubmit')
-      const dataCollected = serialize(form, { hash: false, empty: false })
-      console.log(dataCollected)
+      const dataCollected = serialize(form, { hash: true, empty: false })
 
-      // axios({
-      //   url: 'http://hmajax.itheima.net/api/register',
-      //   method: 'POST',
-      //   data: dataCollected
-      // }).then((result) => {
-      //   console.log(result)
-      // }).catch((error) => {
-      //   console.log(error)
-      //   console.log(error.response.data.message)
-      // })
+      const xhr = new XMLHttpRequest()
+      xhr.open('POST', 'http://hmajax.itheima.net/api/register')
+      xhr.addEventListener('load', () => {
+          const data = JSON.parse(xhr.response)
+          console.log(data)
+      })
+
+      // 設置請求頭
+      xhr.setRequestHeader('Content-Type', 'application/json')
+
+      // 把參數轉換成JSON字符串
+      const userStr = JSON.stringify(dataCollected)
+
+      // 傳入參數
+      xhr.send(userStr)
+
+
     })
 
     // btn.addEventListener('click', () => {

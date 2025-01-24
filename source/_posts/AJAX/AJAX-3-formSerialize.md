@@ -1,5 +1,5 @@
 ---
-title: AJAX-3-收集表單資料的神器 ———— form-serialize插件
+title: AJAX-3- 收集表單資料的神器 ———— form-serialize插件
 excerpt: 本篇討論使用form-serialize插件快速收集表單數據，提交至後臺。
 tags: [Javascript, AJAX, form-serialize] 
 categories: [Javascript]
@@ -54,6 +54,8 @@ https://cdn.jsdelivr.net/npm/form-serialize@0.7.2/index.min.js
   <script src="index.js"></script>
 </body>
 ```
+
+![](/img/AJAX/AJAX-4-3.png)
 <br>
 
 我們直接獲取表單的DOM元素，用`form-serialize`插件來收集數據。
@@ -74,12 +76,14 @@ https://cdn.jsdelivr.net/npm/form-serialize@0.7.2/index.min.js
 ```
 
 打印的結果就直接是對象了，裏面有我們定義的屬性和值。
+<br>
 
 {% note info %}
 - form-serialize依著 `input` 的 `name` 屬性收集數據，沒有這個屬性就無法收集數據。
 
 - 我們可以命名 `name` 屬性時，直接依照接口文件要的參數名字，就不用更改這麽麻煩。 
 {% endnote %}
+<br>
 
 我們發送的axios的 `data` 的内容本來就是對象，我們可以直接把 `dataCollected` 這個變量丟進去：
 ```javascript
