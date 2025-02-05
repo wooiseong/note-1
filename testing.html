@@ -16,50 +16,21 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js"></script>
   <script src="index.js"></script>
   <script>
+// 創建Promise對象
+const p = new Promise((resolve,reject) => {
+  setTimeout(() => {
+    resolve('成功')
+  },2000)
+})
 
-    const btn = document.querySelector('.btn')
+console.log(p)
 
-    btn.addEventListener('click', () => {
-      const form = document.querySelector('.formSubmit')
-      const dataCollected = serialize(form, { hash: true, empty: false })
-
-      const xhr = new XMLHttpRequest()
-      xhr.open('POST', 'http://hmajax.itheima.net/api/register')
-      xhr.addEventListener('load', () => {
-          const data = JSON.parse(xhr.response)
-          console.log(data)
-      })
-
-      // 設置請求頭
-      xhr.setRequestHeader('Content-Type', 'application/json')
-
-      // 把參數轉換成JSON字符串
-      const userStr = JSON.stringify(dataCollected)
-
-      // 傳入參數
-      xhr.send(userStr)
-
-
-    })
-
-    // btn.addEventListener('click', () => {
-    //   const username = name.value
-    //   const password = psword.value
-    //   axios({
-    //     url: 'http://hmajax.itheima.net/api/register',
-    //     method: 'POST',
-    //     data: {
-    //       username,
-    //       password
-    //     }
-    //   }).then((result) => {
-    //     // console.log(result)
-    //   }).catch((error) => {
-    //     console.log(error)
-    //     console.log(error.response.data.message)
-    //   })
-    // })
-
+//獲取結果·
+// p.then(result => {
+//   console.log('成功嗎？',result) // 成功
+// }).catch(error => {
+//   console.log('失敗嗎？',error)
+// })
   </script>
 </body>
 </html>
