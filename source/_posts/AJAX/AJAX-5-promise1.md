@@ -1,5 +1,5 @@
 ---
-title: AJAX-5- Promise概念（一）
+title: AJAX-5- Promise概念（一）Promise的語法
 excerpt: 本篇討論Promise的概念，以及Promise處理異步任務的角色。
 tags: [Javascript, Promise] 
 categories: [Javascript]

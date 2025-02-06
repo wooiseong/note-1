@@ -17,13 +17,39 @@
   <script src="index.js"></script>
   <script>
 // 創建Promise對象
-const p = new Promise((resolve,reject) => {
-  setTimeout(() => {
-    resolve('成功')
-  },2000)
-})
+// const p = new Promise((resolve,reject) => {
+//   setTimeout(() => {
+//     resolve('成功')
+//   },2000)
+// })
 
-console.log(p)
+// const p2 = p.then(result1 => {
+//   console.log(result1) // 成功
+
+//   //返回新的Promise對象
+//   return new Promise((resolve,reject)=> {
+//     resolve(result1 + '再次成功')
+//   })
+// })
+
+// p2.then(result2 => {
+//   console.log(result2) // 成功再次成功
+// })
+
+async function getData(){
+  try{
+    //寫錯第一個請求地址的url
+    const province = await axios({url:'http://hmajax.itheima.net/api/provincee'})
+    const beijing = province.data.list[0] // 北京
+    const city = await axios({url:'http://hmajax.itheima.net/api/city',params:{pname: beijing}})
+    console.log(city)
+  } catch(error){
+    console.dir(error)
+  }
+}
+
+getData()
+
 
 //獲取結果·
 // p.then(result => {
