@@ -7,56 +7,32 @@
 </head>
 
 <body>  
-  <form action="javascript:;" class="formSubmit">
-    <input class="name" type="text" name="username" placeholder="請輸入名字">
-    <input class="password" type="password" name="password" placeholder="請輸入密碼">
-    <button class="btn">提交</button>
-  </form>
+  <!-- 步驟1：準備容器 -->
+  <div id="app">
+    {{ msg }}
+  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js"></script>
-  <script src="index.js"></script>
+  <!-- 步驟2：引入需要的包 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+
   <script>
-// 創建Promise對象
-// const p = new Promise((resolve,reject) => {
-//   setTimeout(() => {
-//     resolve('成功')
-//   },2000)
-// })
-
-// const p2 = p.then(result1 => {
-//   console.log(result1) // 成功
-
-//   //返回新的Promise對象
-//   return new Promise((resolve,reject)=> {
-//     resolve(result1 + '再次成功')
-//   })
-// })
-
-// p2.then(result2 => {
-//   console.log(result2) // 成功再次成功
-// })
-
-async function getData(){
-  try{
-    //寫錯第一個請求地址的url
-    const province = await axios({url:'http://hmajax.itheima.net/api/provincee'})
-    const beijing = province.data.list[0] // 北京
-    const city = await axios({url:'http://hmajax.itheima.net/api/city',params:{pname: beijing}})
-    console.log(city)
-  } catch(error){
-    console.dir(error)
-  }
-}
-
-getData()
+  // 步驟3：創建Vue實例
+  const app = new Vue({
+    // 選擇Vue要管理的盒子
+    el: '#app',
+    // 提供要渲染的數據
+    data: {
+      msg: 'First Vue Project'
+    }
+  })
+  </script>
 
 
-//獲取結果·
-// p.then(result => {
-//   console.log('成功嗎？',result) // 成功
-// }).catch(error => {
-//   console.log('失敗嗎？',error)
-// })
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js"></script>
+  <script src="index.js"></script> -->
+  <script>
+
   </script>
 </body>
 </html>
