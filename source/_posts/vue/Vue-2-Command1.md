@@ -75,6 +75,7 @@ date: 2025-02-06 14:43:12
 從字面上看就是滿足條件就會顯示，不滿足條件就會隱藏，差異在於 `v-show` 只是隱藏，而 `v-if` 是直接移除標籤。
 
 ```html
+<body>
   <div id="app">
     <div v-show="flag">v-show展示</div>
     <div v-show="flag2">v-show隱藏</div>
