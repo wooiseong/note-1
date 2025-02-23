@@ -8,7 +8,8 @@
 
 <body>  
   <div id="app">
-    <input type="text" v-model="name" @input="text()">
+    <button @click="changeAge">年齡總數歸零</button>
+    <div>{{ totalAge }}</div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
@@ -17,11 +18,26 @@
   const app = new Vue({
     el: '#app',
     data: {
-      name: 'haha' 
+      list: [
+        {name: 'A', age: 20},
+        {name: 'B', age: 100},
+      ] 
     },
     methods: {
-      text(){
-        console.log(this.name)
+      changeAge(){
+        this.totalAge = 0
+      }
+    },
+    computed: {
+      totalAge: {
+        get(){
+          return this.list.reduce((prev,current) => prev + current.age, 0)
+        },  
+        set(value){
+          console.log(value)
+          this.list[0].age = value
+          this.list[1].age = value
+        }
       }
     }
   })
