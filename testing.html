@@ -8,8 +8,9 @@
 
 <body>  
   <div id="app">
-    <button @click="changeAge">年齡總數歸零</button>
-    <div>{{ totalAge }}</div>
+    <div>計算的年齡：{{ totalAgeFn() }}</div>
+    <div>再次計算的年齡：{{ totalAgeFn() }}</div>
+    <div>三次計算的年齡：{{ totalAgeFn() }}</div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
@@ -24,21 +25,12 @@
       ] 
     },
     methods: {
-      changeAge(){
-        this.totalAge = 0
+      totalAgeFn(){
+        console.log('我執行一次')
+        return this.list.reduce((prev,current) => prev + current.age, 0)
       }
     },
     computed: {
-      totalAge: {
-        get(){
-          return this.list.reduce((prev,current) => prev + current.age, 0)
-        },  
-        set(value){
-          console.log(value)
-          this.list[0].age = value
-          this.list[1].age = value
-        }
-      }
     }
   })
   </script>

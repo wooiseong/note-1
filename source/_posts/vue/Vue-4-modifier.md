@@ -1,5 +1,5 @@
 ---
-title: Vue-3-基礎語法（三） 指令修飾符
+title: Vue-4-基礎語法（三） 指令修飾符
 excerpt: 本篇會介紹一些vue指令的修飾符，可以更加方便操作數據。
 tags: [Vue， modifier]
 categories: [Vue]
