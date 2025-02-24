@@ -8,9 +8,16 @@
 
 <body>  
   <div id="app">
-    <div>計算的年齡：{{ totalAgeFn() }}</div>
-    <div>再次計算的年齡：{{ totalAgeFn() }}</div>
-    <div>三次計算的年齡：{{ totalAgeFn() }}</div>
+    <div>
+      <div>我是原字</div>
+      <input v-model="oriText.text" type="text">
+      <select v-model="oriText.language">
+        <option value="EN">EN</option>
+        <option value="CN">CN</option>
+        <option value="FN">FN</option>
+      </select>
+    </div>
+    <br>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
@@ -19,26 +26,28 @@
   const app = new Vue({
     el: '#app',
     data: {
-      list: [
-        {name: 'A', age: 20},
-        {name: 'B', age: 100},
-      ] 
+      oriText: {
+        language: 'EN',
+        text: ''
+      },
     },
-    methods: {
-      totalAgeFn(){
-        console.log('我執行一次')
-        return this.list.reduce((prev,current) => prev + current.age, 0)
+    watch: {
+      oriText: {
+        deep: true,
+        handler(newValue, oldValue){
+          console.log(newValue, oldValue)
+        }
       }
     },
-    computed: {
-    }
+    methods: {
+    },
   })
   </script>
 
 
 
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js"></script>
-  <script src="index.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js"></script>
+  <script src="index.js"></script>
   <script>
 
   </script>
