@@ -8,16 +8,9 @@
 
 <body>  
   <div id="app">
-    <div>
-      <div>我是原字</div>
-      <input v-model="oriText.text" type="text">
-      <select v-model="oriText.language">
-        <option value="EN">EN</option>
-        <option value="CN">CN</option>
-        <option value="FN">FN</option>
-      </select>
-    </div>
-    <br>
+    <button @click="count--">-</button>
+    <span>{{ count }}</span>
+    <button @click="count++">+</button>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
@@ -26,21 +19,33 @@
   const app = new Vue({
     el: '#app',
     data: {
-      oriText: {
-        language: 'EN',
-        text: ''
-      },
+      count: 100,
+      title: '計數器'
     },
-    watch: {
-      oriText: {
-        deep: true,
-        handler(newValue, oldValue){
-          console.log(newValue, oldValue)
-        }
-      }
+    beforeCreate(){
+      console.log('beforeCreate', this.count)
     },
-    methods: {
+    created() {
+      console.log('created', this.count)
     },
+    beforeMount() {
+      console.log('beforeMount', document.querySelector('span'))
+    },
+    mounted() {
+      console.log('mounted', document.querySelector('span'))
+    },
+    beforeUpdate() {
+      console.log('beforeUpdate', document.querySelector('span').innerHTML)
+    },
+    updated(){
+      console.log('updated', document.querySelector('span').innerHTML)
+    },
+    beforeDestroy() {
+      console.log('beforeDestroy')
+    },
+    destroyed() {
+      console.log('destroyed')
+    }
   })
   </script>
 

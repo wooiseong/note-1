@@ -1,5 +1,6 @@
 ---
 title: Vue-7-監聽的科技 ———— watch
+excerpt: 本篇介紹vue的watch屬性，可以幫我們監視已聲明的數據的變化。
 tags: [Vue， watch]
 categories: [Vue]
 date: 2025-02-24 15:25:52
