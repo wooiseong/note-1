@@ -11,6 +11,8 @@
     <button @click="count--">-</button>
     <span>{{ count }}</span>
     <button @click="count++">+</button>
+    <div v-for="item in list" :key="item.id">{{ item.id }}</div>
+    <input type="text" v-model.number="keyWords">
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
@@ -20,31 +22,32 @@
     el: '#app',
     data: {
       count: 100,
-      title: '計數器'
+      title: '計數器',
+      list: [
+        {id: 123456, name: 'Hotel'},
+        {id: 789012, name: 'Restaurant'},
+        {id: 345678, name: 'Attractielq'}
+      ],
+      keyWords: ''
     },
-    beforeCreate(){
-      console.log('beforeCreate', this.count)
-    },
-    created() {
-      console.log('created', this.count)
-    },
-    beforeMount() {
-      console.log('beforeMount', document.querySelector('span'))
-    },
-    mounted() {
-      console.log('mounted', document.querySelector('span'))
-    },
-    beforeUpdate() {
-      console.log('beforeUpdate', document.querySelector('span').innerHTML)
-    },
-    updated(){
-      console.log('updated', document.querySelector('span').innerHTML)
-    },
-    beforeDestroy() {
-      console.log('beforeDestroy')
-    },
-    destroyed() {
-      console.log('destroyed')
+    watch: {
+      keyWords(newV){
+        const result = this.list.map((item) => {
+          return item.id.toString()
+        })
+        console.log(result)
+
+        this.list = this.list.filter((item) => {
+          return item.id.toString().includes(newV)
+        })
+        // this.list = searchList.filter((item) => {
+        //   return item.id.includes(newV)
+        // })
+      // this.list = this.list.filter((item) => {
+        //   return item.id.includes(newV)
+        // })
+        // console.log(this.list)
+      }
     }
   })
   </script>
