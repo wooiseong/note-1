@@ -1,5 +1,5 @@
 ---
-title: Vue-12-組件之間的通信（二）
+title: Vue-13-組件之間的通信（二）
 excerpt: 本篇會詳細介紹 Vue.js 的非組件傳遞數據的方式，即 event bus和 provide inject。
 tags: [Vue， eventBus，provide and inject]
 categories: [Vue]
