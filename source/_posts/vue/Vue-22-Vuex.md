@@ -1,5 +1,5 @@
 ---
-title: Vue-21-Vuex————管理狀態的倉庫
+title: Vue-22-Vuex————管理狀態的倉庫
 excerpt: 本篇會介紹Vuex的概念，以及使用方式。
 tags: [Vue， Vuex]
 categories: [Vue]
