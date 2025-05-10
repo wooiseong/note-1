@@ -55,7 +55,7 @@ export const useCounterStore = defineStore('counter', () => {
 })
 ```
 
-然後在需要使用的組件引入倉庫，並使用倉庫中的數據：
+然後在需要使用的組件引入倉庫，使用倉庫中的數據：
 
 ```js
 <script setup>
