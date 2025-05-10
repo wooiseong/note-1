@@ -1,5 +1,5 @@
 ---
-title: Vue3-1-Vue 2的未來 --- Vue3的登場 (二)
+title: Vue3-2-Vue 2的未來 --- Vue3的登場 (二)
 excerpt: 本篇繼續介紹Vue 3新增的特點，和Vue 2相比需要注意的地方。
 tags: [Vue， Vue3]
 categories: [Vue]
@@ -68,7 +68,7 @@ watch(() => info.value.age, (newVal, oldVal) => {
 
 ![](/img/Vue/Vue3/Vue3-2-3.png)
 
-只是需要注意的是，如果要使用生命周期鈎子函數，需要特別引入，才可以使用：
+只是需要注意的是，如果要使用生命周期鈎子函數，需特別引入，才可以使用：
 
 比如使用 `onMounted`：
 
