@@ -45,7 +45,7 @@ import user from './modules/user'
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
-  strict: true, // 严格模式
+  strict: true, // 設定严格模式
   modules: {
     user
   }
